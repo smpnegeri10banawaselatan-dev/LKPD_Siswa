@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi - SMPN 10 Banawa Selatan</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="icon" href="frontend/assets/smpn10.jpg" />
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="bg-orange-600 text-white p-4 flex items-center justify-between shadow-md">
+    <div class="flex items-center space-x-3">
+      <img src="frontend/assets/smpn10.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Logo">
+      <h1 class="text-lg font-semibold">Absensi Online</h1>
+    </div>
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded-lg text-sm">Keluar</button>
+  </nav>
+
+  <!-- Main -->
+  <main class="flex-grow container mx-auto px-6 py-10 max-w-lg">
+    <div class="bg-white rounded-2xl shadow-lg p-8 border border-orange-100">
+      <h2 class="text-xl font-bold text-gray-700 mb-4 text-center">🕓 Isi Kehadiran</h2>
+
+      <form id="absensiForm" onsubmit="submitAbsensi(event)">
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
+          <input type="date" id="tanggal" class="form-control" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Kelas</label>
+          <select id="kelas" class="form-select w-full border-gray-300 rounded-lg" required>
+            <option value="">-- Pilih Kelas --</option>
+            <option value="7">Kelas 7</option>
+            <option value="8">Kelas 8</option>
+            <option value="9">Kelas 9</option>
+          </select>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Status Kehadiran</label>
+          <select id="status" class="form-select w-full border-gray-300 rounded-lg" required>
+            <option value="">-- Pilih Status --</option>
+            <option value="Hadir">✅ Hadir</option>
+            <option value="Izin">🟡 Izin</option>
+            <option value="Sakit">🩺 Sakit</option>
+            <option value="Alpa">❌ Alpa</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg shadow">
+          📋 Simpan Absensi
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg hidden"></div>
+
+  <footer class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
+    &copy; 2025 SMPN 10 Banawa Selatan
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
