@@ -3,7 +3,7 @@
  * Sistem Pembelajaran Digital - SMPN 10 Banawa Selatan
  ****************************************************/
 
-const API_URL = "https://script.google.com/macros/s/AKfycbwJkI55D4KV7NkhxKOuvDqJP-tVCDVZPy_gTwg1hVZUTYyN30vqvSSVzXuCNg92MLTxNw/exec"; 
+const API_URL = "https://script.google.com/macros/s/AKfycbyS5NjyMy6VMcFQNpeQ1k0d6QUoQqvnXoFAmPqMuFdC_SjgfYYQfN3mQPOsz3m39IuoJg/exec"; 
 // ⚠️ Ganti dengan URL Web App kamu setelah di-deploy dari Apps Script (Publish > Deploy as Web App)
 
 /* =====================================================
@@ -180,3 +180,4 @@ function showToast(message) {
   toast.classList.remove("hidden");
   setTimeout(() => toast.classList.add("hidden"), 3000);
 }
+
